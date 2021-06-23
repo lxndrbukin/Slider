@@ -1,10 +1,16 @@
 const slides = document.getElementsByClassName("slide");
 const slidesNum = slides.length;
 const rightButton = document.querySelector(".right-arrow");
-console.log(slidesNum);
-slides[0].style.zIndex = "1";
+let currentSlide = "0";
+slides[0].className = "slide show-slide";
+
+const moveSlide = () => {
+    slides[currentSlide].className = "slide";
+    currentSlide = (currentSlide + 1) % slidesNum;
+    slides[currentSlide].className = "slide show-slide";
+}
 
 
-rightButton.addEventListener("click", function moveSlide() {
-    slides[0].style.left = "600px";
-});
+rightButton.addEventListener("click", moveSlide);
+
+// setInterval(moveSlide, 5000);

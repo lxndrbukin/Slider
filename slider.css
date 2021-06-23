@@ -23,11 +23,18 @@ body {
 .slide {
     height: 300px;
     width: 600px;
-    margin: 5px;
     position: absolute;
+    opacity: 0;
     left: 50%;
-    transition: left .5s;
+    z-index: 1;
+    transition: opacity .5s;
 }
+
+.show-slide {
+    z-index: 2;
+    opacity: 1;
+}
+
 
 .left-arrow {
     font-size: 30px;
