@@ -1,0 +1,46 @@
+body {
+    width: 100%;
+    margin: 0;
+}
+
+#slider-wrapper {
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: transparent;
+    margin: 20% auto;
+    position: relative;
+}
+
+#slider {
+    display: flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+    position: absolute;
+}
+
+.slide {
+    height: 300px;
+    width: 600px;
+    margin: 5px;
+    position: absolute;
+    left: 50%;
+    transition: left .5s;
+}
+
+.left-arrow {
+    font-size: 30px;
+    position: absolute;
+    z-index: 1;
+    top: 45%;
+}
+
+.right-arrow {
+    font-size: 30px;
+    position: absolute;
+    z-index: 1;
+    top: 45%;
+    right: 0;
+}
+
