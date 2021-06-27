@@ -1,25 +1,35 @@
+// Variables
 const slides = document.getElementsByClassName("slide");
 const slider = document.querySelector("#slider");
 const slidesNum = slides.length;
 const rightButton = document.querySelector(".right-arrow");
 const leftButton = document.querySelector(".left-arrow");
 const dots = document.getElementsByClassName("slider-dot");
-let currentDot = 0;
+const dotsNum = dots.length;
+
 let currentSlide = 0;
+let currentDot = 0;
 dots[currentDot].className = "slider-dot current-dot";
+
+//Functions
+const transform = () => {
+    slider.style.transform = `translateX(${currentSlide * -600}px)`;
+}
 
 const dotSlide = (n) => {
     dots[currentDot].className = "slider-dot";
-    currentDot = n % dots.length;
+    currentDot = (n - 1) % dotsNum;
     dots[currentDot].className = "slider-dot current-dot";
     slider.style.transform = `translateX(${currentDot * -600}px)`;
+    clearInterval(timer);
+    timer = setInterval(nextSlide, 4000);
 }
 
 const nextSlide = () => {
     dots[currentSlide].className = "slider-dot";
     currentSlide = (currentSlide + 1) % slidesNum;
     dots[currentSlide].className = "slider-dot current-dot";
-    slider.style.transform = `translateX(${currentSlide * -600}px)`;
+    transform();
     clearInterval(timer);
     timer = setInterval(nextSlide, 4000);
 }
@@ -31,11 +41,10 @@ const prevSlide = () => {
         currentSlide = 2
     }
     dots[currentSlide].className = "slider-dot current-dot";
-    slider.style.transform = `translateX(${currentSlide * -600}px)`;
+    transform();
     clearInterval(timer);
     timer = setInterval(nextSlide, 4000);
 }
-
 
 rightButton.addEventListener("click", nextSlide);
 leftButton.addEventListener("click", prevSlide);
