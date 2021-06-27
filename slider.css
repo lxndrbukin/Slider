@@ -16,43 +16,38 @@ body {
 #slider {
     display: flex;
     justify-content: center;
-    transform-style: preserve-3d;
     position: absolute;
+    transition: transform .5s;
 }
 
 .slide {
     height: 300px;
     width: 600px;
-    position: absolute;
-    opacity: 0;
-    left: 50%;
-    z-index: 1;
-    transition: opacity .5s;
+    z-index: 2;
     text-align: center;
     font-size: 50px;
     font-weight: bold;
     color: white;
+    left: 50%;
 }
 
-
-.show-slide {
-    z-index: 2;
-    opacity: 1;
+.first-slide {
+    left: 0;
 }
-
 
 .left-arrow {
     font-size: 30px;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     top: 45%;
+    cursor: pointer;
 }
 
 .right-arrow {
     font-size: 30px;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     top: 45%;
     right: 0;
+    cursor: pointer;
 }
-
