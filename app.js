@@ -13,14 +13,14 @@ dots[currentDot].className = "slider-dot current-dot";
 
 //Functions
 const transform = () => {
-    slider.style.transform = `translateX(${currentSlide * -600}px)`;
+    slider.style.transform = `translateX(${currentSlide * -800}px)`;
 }
 
 const dotSlide = (n) => {
     dots[currentDot].className = "slider-dot";
     currentDot = (n - 1) % dotsNum;
     dots[currentDot].className = "slider-dot current-dot";
-    slider.style.transform = `translateX(${currentDot * -600}px)`;
+    slider.style.transform = `translateX(${currentDot * -800}px)`;
     clearInterval(timer);
     timer = setInterval(nextSlide, 4000);
 }

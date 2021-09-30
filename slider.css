@@ -4,13 +4,14 @@ body {
 }
 
 #slider-wrapper {
-    width: 600px;
-    height: 300px;
+    width: 800px;
+    height: 400px;
     overflow: hidden;
     box-sizing: border-box;
     background-color: transparent;
     margin: 10% auto 1%;
     position: relative;
+    border-radius: 5px;
 }
 
 #slider {
@@ -21,15 +22,17 @@ body {
 }
 
 .slide {
-    height: 300px;
-    width: 600px;
+    height: 400px;
+    width: 800px;
     z-index: 2;
     text-align: center;
     font-size: 50px;
     font-weight: bold;
     color: white;
     left: 50%;
+    background-size: 800px 400px;
 }
+
 
 .slider-dots {
     display: flex;
@@ -56,17 +59,25 @@ body {
 
 .left-arrow {
     font-size: 30px;
+    text-align: center;
     position: absolute;
     z-index: 3;
     top: 45%;
     cursor: pointer;
+    background-color: rgba(237, 233, 232, 0.7);
+    width: 30px;
+    height: 30px;
 }
 
 .right-arrow {
     font-size: 30px;
+    text-align: center;
     position: absolute;
     z-index: 3;
     top: 45%;
     right: 0;
     cursor: pointer;
+    background-color: rgba(237, 233, 232, 0.7);
+    width: 30px;
+    height: 30px;
 }
