@@ -37,6 +37,10 @@ body {
 .slider-dots {
     display: flex;
     justify-content: center;
+    position: absolute;
+    z-index: 1;
+    left: calc(50% - 40px);
+    bottom: 10px;
 }
 
 .slider-dot {
